@@ -1,0 +1,289 @@
+/* Online Safety Checklist — TB branding: dark navy + teal */
+:root {
+  --navy: #0a2540;
+  --navy-dark: #071a2e;
+  --teal: #0ea5a4;
+  --teal-dark: #0b8584;
+  --bg: #f2f5f7;
+  --card: #ffffff;
+  --text: #1c2b36;
+  --muted: #5b6b78;
+  --border: #d9e2e8;
+  --green: #177245;
+  --green-bg: #e3f4ea;
+  --red: #a83232;
+  --red-bg: #fbe9e9;
+  --amber: #8a5a00;
+  --amber-bg: #fdf3dd;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.site-header {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 28px 0 24px;
+  border-bottom: 4px solid var(--teal);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: #bcd3de;
+  font-size: 15px;
+}
+
+/* Cards */
+main { padding: 24px 0 32px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 20px;
+}
+
+.demo-note {
+  background: #eef7f7;
+  border-left: 4px solid var(--teal);
+  padding: 10px 12px;
+  border-radius: 0 8px 8px 0;
+}
+
+.risk-note {
+  background: var(--red-bg);
+  border-left: 4px solid var(--red);
+  padding: 10px 12px;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Form */
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--navy);
+}
+
+.field input[type="password"],
+.field input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--text);
+}
+
+.field input:focus {
+  outline: 2px solid var(--teal);
+  border-color: var(--teal);
+}
+
+.pw-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.meter {
+  flex: 1 1 160px;
+  height: 10px;
+  background: #e6ebef;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--red);
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #eef7f7;
+  color: var(--navy);
+}
+
+.badge.weak { background: var(--red-bg); color: var(--red); }
+.badge.fair { background: var(--amber-bg); color: var(--amber); }
+.badge.good { background: #e3f0fb; color: #1d5fa8; }
+.badge.strong { background: var(--green-bg); color: var(--green); }
+
+/* Rules + checklists */
+.rules { margin: 14px 0 0; padding-left: 20px; }
+.rules li { margin-bottom: 6px; color: var(--muted); }
+.rules li.pass { color: var(--green); font-weight: 600; }
+.rules li.pass::marker { content: "✓ "; }
+
+.flags label {
+  display: block;
+  margin: 8px 0;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.flags input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--teal);
+  vertical-align: -3px;
+  margin-right: 8px;
+}
+
+.summary {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 14px 0 0;
+}
+
+.summary.danger { color: var(--red); }
+.summary.warn { color: var(--amber); }
+.summary.safe { color: var(--green); }
+
+/* Quiz */
+.quiz-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.quiz-item blockquote {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  background: #f6f8fa;
+  border-left: 4px solid var(--navy);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+.quiz-answer {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: none;
+}
+
+.quiz-answer.show { display: block; }
+.quiz-answer.correct { background: var(--green-bg); color: var(--green); }
+.quiz-answer.wrong { background: var(--red-bg); color: var(--red); }
+
+/* Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.btn-primary:hover { background: var(--teal-dark); }
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
+
+.btn-small {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.disclaimer h2 { color: var(--navy); }
+
+/* Footer */
+.site-footer {
+  background: var(--navy-dark);
+  color: #bcd3de;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.site-footer p { margin: 4px 0; }
+.footer-note { font-size: 13px; opacity: 0.85; }
+
+/* Mobile */
+@media (max-width: 640px) {
+  .site-header h1 { font-size: 21px; }
+  .card { padding: 16px; }
+  .btn { width: 100%; }
+}
