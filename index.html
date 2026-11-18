@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online Safety Checklist — check a password's strength, spot phishing red flags, and learn to tell a real job from a scam.">
+  <title>Online Safety Checklist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo" aria-hidden="true">TB</div>
+      <div>
+        <h1>Online Safety Checklist</h1>
+        <p class="tagline">Strong passwords, sharp eyes — stay safe online</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro card">
+      <h2>Why this matters</h2>
+      <p>Online safety is not a theory subject — it is the first skill every
+        job seeker needs. A fake "shortlisted" message, a form asking for a
+        fee, a weak password: one careless click can cost money or an account.
+        This page was built as a companion to VU's free <strong>Digital
+        Awareness course (PTC801, 4 weeks)</strong>, which teaches exactly
+        these skills — strong passwords, spotting phishing, and managing your
+        personal data. Try the tools below, tick the habits, and keep them.</p>
+      <p class="demo-note"><strong>Privacy note:</strong> everything here runs
+        in your browser. Nothing you type or tick is sent anywhere. And never
+        type a real password into a demo — test with a made-up one.</p>
+    </section>
+
+    <section class="card">
+      <h2>1. Password strength checker</h2>
+      <p>Type a made-up password to test it. A strong password is long and
+        mixed — and different for every site.</p>
+      <div class="field">
+        <label for="pw-input">Test password</label>
+        <input type="password" id="pw-input" placeholder="Type a made-up password" autocomplete="off" maxlength="64">
+      </div>
+      <div class="pw-row">
+        <button type="button" class="btn btn-secondary btn-small" id="pw-toggle">Show</button>
+        <div class="meter" aria-hidden="true"><div class="meter-fill" id="meter-fill"></div></div>
+        <span class="badge" id="pw-strength">Not tested</span>
+      </div>
+      <ul class="rules" id="pw-rules">
+        <li data-rule="length">At least 12 characters</li>
+        <li data-rule="upper">At least one capital letter (A–Z)</li>
+        <li data-rule="lower">At least one small letter (a–z)</li>
+        <li data-rule="digit">At least one number (0–9)</li>
+        <li data-rule="symbol">At least one symbol (! @ # $ %)</li>
+        <li data-rule="common">Not a common password like "password123" or "123456"</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2. Phishing red-flag checklist</h2>
+      <p>Got a "shortlisted" message or a job form? Tick every red flag you
+        can see. The risk score tells you how careful to be.</p>
+      <div class="flags" id="flags">
+        <label><input type="checkbox" data-flag> It asks for a fee before you join</label>
+        <label><input type="checkbox" data-flag> It asks for your CNIC number, bank details or OTP</label>
+        <label><input type="checkbox" data-flag> The sender or company name is missing or unknown</label>
+        <label><input type="checkbox" data-flag> It pressures you: "pay now or lose the job"</label>
+        <label><input type="checkbox" data-flag> The link does not match the company name</label>
+        <label><input type="checkbox" data-flag> Bad spelling or grammar in an "official" message</label>
+        <label><input type="checkbox" data-flag> "You are shortlisted" — out of nowhere, no interview</label>
+        <label><input type="checkbox" data-flag> It asks you to download an unknown app or file</label>
+      </div>
+      <p class="summary" id="risk-summary">0 red flags ticked — check the message carefully.</p>
+      <p class="risk-note">If a form asks for a fee, your CNIC or bank details
+        before you join, it is not a job — it is a scam. Pay nothing, send
+        nothing, and ask someone you trust first.</p>
+    </section>
+
+    <section class="card">
+      <h2>3. Spot the scam — mini quiz</h2>
+      <p>Three real-style messages. Safe or scam — you decide, then check the answer.</p>
+      <div id="quiz"></div>
+    </section>
+
+    <section class="card">
+      <h2>4. Safe habits</h2>
+      <p>Tick the habits you already follow. Your ticks are saved in your browser.</p>
+      <div class="flags" id="habits">
+        <label><input type="checkbox" data-habit> I use a different password for every important account</label>
+        <label><input type="checkbox" data-habit> I have two-step verification (2FA) on my email</label>
+        <label><input type="checkbox" data-habit> I never share my OTP or password with anyone</label>
+        <label><input type="checkbox" data-habit> I check the sender's address before clicking a link</label>
+        <label><input type="checkbox" data-habit> I verify a job on the company's official site before paying anything</label>
+        <label><input type="checkbox" data-habit> I keep my phone and apps updated</label>
+      </div>
+      <p class="summary" id="habit-summary"></p>
+      <div class="actions">
+        <button type="button" class="btn btn-secondary" id="reset-all">Reset all ticks</button>
+      </div>
+    </section>
+
+    <section class="card disclaimer">
+      <h2>Important note</h2>
+      <p>This is a <strong>demo learning tool</strong>. It cannot guarantee
+        that a message is safe or a scam — when in doubt, verify on the
+        official website or ask someone you trust, and never pay a fee,
+        CNIC number or bank details to an unknown sender.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Online Safety Checklist &middot; Built by Tasleem Bibi &middot; Sukkur, Sindh, Pakistan</p>
+      <p class="footer-note">Companion to VU's Digital Awareness course (PTC801). Learn it, use it, share it.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
